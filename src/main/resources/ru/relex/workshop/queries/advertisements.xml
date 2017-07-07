@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<properties>
+        
+        <entry key="getAllAdvertisements">
+        	<![CDATA[
+                SELECT
+                	id AS id,
+                	name AS name,
+                	description AS description,
+                	price AS price,
+                	address AS address,
+                	phone AS phone
+                FROM advertisements
+        	]]>
+        </entry>
+        
+        <entry key="getAdvertisementById">
+        	<![CDATA[
+                SELECT
+                	id AS id,
+                	name AS name,
+                	description AS description,
+                	price AS price,
+                	address AS address,
+                	phone AS phone
+                FROM advertisements
+                WHERE id = :id
+        	]]>
+        </entry>
+        
+        <entry key="createAdvertisement">
+        	<![CDATA[
+        		INSERT INTO advertisements
+        		(name, description, price, address, phone)
+        		VALUES
+        		(:name, :description, :price, :address, :phone)
+        	]]>
+        </entry>
+        
+        <entry key="updateAdvertisement">
+        	<![CDATA[
+        		UPDATE advertisements SET
+        			name = :name
+        			description = :description
+        			price = :price
+        			address = :address
+        			phone = :phone
+        		WHERE id = :id
+        	]]>
+        </entry>
+        
+        <entry key="deleteAdvertisement">
+        	<![CDATA[
+        		DELETE FROM advertisements
+        		WHERE id = :id
+        	]]>
+        </entry>
+
+</properties>

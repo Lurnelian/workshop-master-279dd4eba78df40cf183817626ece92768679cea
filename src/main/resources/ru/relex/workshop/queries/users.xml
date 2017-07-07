@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<properties>
+
+        <entry key="createUser">
+        	<![CDATA[
+                INSERT INTO users (email, password, description)
+                VALUES (:email, :password, :description)
+        	]]>
+        </entry>
+        
+        <entry key="getUserById">
+        	<![CDATA[
+                SELECT
+                	id AS id,
+                	email AS email,
+                	password AS password,
+                	description AS description
+                	FROM users
+                	WHERE id = :id
+        	]]>
+        </entry>
+        
+        <entry key="getUserByEmail">
+        	<![CDATA[
+                SELECT
+                	id AS id,
+                	email AS email,
+                	password AS password,
+                	description AS description
+                	FROM users
+                	WHERE email = :email
+        	]]>
+        </entry>
+        
+        <entry key="getAllUsers">
+        	<![CDATA[
+                SELECT
+                	id AS id,
+                	email AS email,
+                	password AS password,
+                	description AS description
+                FROM users
+        	]]>
+        </entry>
+        
+        <entry key="updateUser">
+        	<![CDATA[
+                UPDATE users SET
+                				email = :email
+                				password = :password
+                				description = :description
+                			WHERE id = :id
+        	]]>
+        </entry>
+
+</properties>
